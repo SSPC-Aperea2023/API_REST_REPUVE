@@ -13,9 +13,6 @@ namespace API_REST_REPUVE.Controllers
         public IEnumerable<string> Get()
         {
 
-            return new string[] { "value1", "value2" };
-            return new string[] { "Commit Daniel", "value2" };
-
             return new string[] { "value1Alex", "value2" };
 
         }
