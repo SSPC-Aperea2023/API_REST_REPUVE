@@ -63,7 +63,7 @@ namespace API_REST_REPUVE.Controllers
 
             Listmodel.Add(repuveModel);
             Listmodel.Add(repuveModel1);
-            var res = JsonConvert.SerializeObject(Listmodel);
+            string res = JsonConvert.SerializeObject(Listmodel);
 
 
             return res;
