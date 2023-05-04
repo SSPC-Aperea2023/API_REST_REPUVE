@@ -16,6 +16,11 @@ namespace API_REST_REPUVE.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
+            using (WebClient wc = new WebClient())
+            {
+                var json = wc.DownloadString("https://localhost:44334/api/Values?Idfuente=1");
+                var user = JsonConvert.DeserializeObject<List<RepuveModel>>(json);
+            }
             return new string[] { "value1Alex", "value2" };
         }
 
@@ -42,7 +47,7 @@ namespace API_REST_REPUVE.Controllers
 
         //[Route("getFuente/{Idfuente}")]
         //[HttpGet]
-        public string Get(int Idfuente)
+        public List<RepuveModel> Get(int Idfuente)
         {
             List<RepuveModel> Listmodel =new List<RepuveModel>();
             RepuveModel repuveModel = new RepuveModel();
@@ -61,10 +66,10 @@ namespace API_REST_REPUVE.Controllers
 
             Listmodel.Add(repuveModel);
             Listmodel.Add(repuveModel1);
-            var res = JsonConvert.SerializeObject(Listmodel);
+           // List<RepuveModel> res = JsonConvert.SerializeObject(Listmodel);
 
 
-            return res;
+            return Listmodel;
         }
     }
 }
