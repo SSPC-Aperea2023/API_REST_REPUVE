@@ -16,12 +16,9 @@ namespace API_REST_REPUVE.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
-            using (WebClient wc = new WebClient())
-            {
-                var json = wc.DownloadString("https://localhost:44334/api/Values?Idfuente=1");
-                var user = JsonConvert.DeserializeObject<List<RepuveModel>>(json);
-            }
+
             return new string[] { "value1Alex", "value2" };
+
         }
 
         // GET api/values/5
