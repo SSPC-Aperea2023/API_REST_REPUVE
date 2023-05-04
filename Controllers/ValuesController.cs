@@ -52,7 +52,16 @@ namespace API_REST_REPUVE.Controllers
             repuveModel.Fecha_Nacimiento = "23 DE OCTUBRE DE 1981";
             repuveModel.Placa_Vehicular = "NFL1234";
 
-            var res = JsonConvert.SerializeObject(repuveModel);
+            RepuveModel repuveModel1 = new RepuveModel();
+            repuveModel1.Nombre = "Jose Luis";
+            repuveModel1.Apellido = "Aguilar";
+            repuveModel1.Curp = "JOAG710423HDFRGW20";
+            repuveModel1.Fecha_Nacimiento = "23 DE OCTUBRE DE 1971";
+            repuveModel1.Placa_Vehicular = "NBA666";
+
+            Listmodel.Add(repuveModel);
+            Listmodel.Add(repuveModel1);
+            var res = JsonConvert.SerializeObject(Listmodel);
 
 
             return res;
